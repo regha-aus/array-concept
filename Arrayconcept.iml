@@ -1,11 +1,36 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<module type="JAVA_MODULE" version="4">
-  <component name="NewModuleRootManager" inherit-compiler-output="true">
-    <exclude-output />
-    <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
-    </content>
-    <orderEntry type="inheritedJdk" />
-    <orderEntry type="sourceFolder" forTests="false" />
-  </component>
-</module>
+mport java.util.Scanner;
+
+public class StudentResultSystem {
+    public static void displayResult(String name,int mark){
+        System.out.println("\n=====STUDENT RESULT=====");
+        System.out.println("Student Name:"+name);
+        System.out.println("Student Mark:"+mark);
+        if(mark>=50){
+            System.out.println("Result:pass");
+        }
+        else{
+            System.out.println("Result: Fail");
+        }
+
+    }
+    public static void main(String[]args){
+        Scanner sc= new Scanner(System.in);
+        String[] names=new String[3];
+    int[]marks=new int[3];
+
+    for(int i=0;i<3;i++){
+        System.out.print("\n Enter Student Name:");
+        names[i] =sc.nextLine();
+
+        System.out.print("Enter Student Mark:");
+        marks[i]=sc.nextInt();
+
+        sc.nextLine();
+    }
+    for(int i=0;i<3;i++){
+        displayResult(names[i],marks[i]);
+
+    }
+    sc.close();
+    }
+}
